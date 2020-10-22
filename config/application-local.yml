@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@gitlab.com:demo/dev-config.git
+          private-key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIJKAIBAAKCAgEAuUVbnX6e4JdbN1rLJw875IAkc0j/sd7sA4HAmePYh/2xUW2Y
+            qGiwZMOEhfZtFCa5LzWVm2ELd5YYYOOEsEVRFPQu4LGBfGS2AFzoQnPnLh+8HS3Q
+            AqivmlIMlLgypGq/zHFsRyj/gksipxLkcC9mK6yWQherk1iVoMgKpf16YZs=
+            -----END RSA PRIVATE KEY-----

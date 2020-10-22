@@ -1,0 +1,41 @@
+server:
+  shutdown: graceful
+
+management:
+  server:
+    port: 9000
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always # 顯示詳細健康檢查, UAT 以上環境關閉
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  info:
+    git:
+      mode: full
+
+logging:
+  level:
+    root: info
+
+spring:
+  application:
+    name: config-server
+  main:
+    cloud-platform: kubernetes
+    banner-mode: off 
+  cloud:
+    config:
+      server:
+        git:
+          ignore-local-ssh-settings: true
+          force-pull: true
+          clone-on-start: true
