@@ -34,7 +34,7 @@ cat > docker-compose.yml << EOF
 version: "3.8"
 services:
   config-server:
-    image: ghcr.io/cloud-technology/config-server/config-server:3
+    image: ghcr.io/cloud-technology/config-server/config-server:4
     container_name: config-server
     ports:
       - "8080:8080"
