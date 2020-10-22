@@ -30,7 +30,7 @@ jobs:
     - name: Login Docker
       run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
     - name: Build Docker Image
-      run: ./gradlew bootBuildImage --imageName=ghcr.io/$GITHUB_REPOSITORY/config-server:$GITHUB_RUN_NUMBER
+      run: ./gradlew bootBuildImage --imageName=ghcr.io/$GITHUB_REPOSITORY/config-server:$GITHUB_RUN_NUMBER --builder=gcr.io/buildpacks/builder
     - name: Push Docker
       run: docker push ghcr.io/$GITHUB_REPOSITORY/config-server:$GITHUB_RUN_NUMBER
 
